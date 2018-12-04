@@ -2,7 +2,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RelationalList;
 using System.Collections.Generic;
 using System.Text;
-using System.Linq;
 
 namespace UnitTests
 {
@@ -79,7 +78,7 @@ namespace UnitTests
             }
             catch
             {
-
+                //pass - threw an exception when given invalid types
             }
         }
 
@@ -296,7 +295,7 @@ namespace UnitTests
             }
             catch
             {
-
+                //pass - threw an exception when given duplicate data
             }
         }
     }
