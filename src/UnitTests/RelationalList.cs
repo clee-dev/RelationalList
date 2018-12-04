@@ -29,7 +29,7 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Brackets()
+        public void Brackets_Get()
         {
             Assert.AreEqual(1, Test["one"]);
             Assert.AreEqual(2, Test["two"]);
@@ -37,6 +37,15 @@ namespace UnitTests
             Assert.AreEqual("one", Test[1]);
             Assert.AreEqual("two", Test[2]);
             Assert.AreEqual("three", Test[3]);
+        }
+
+        [TestMethod]
+        public void Brackets_Set()
+        {
+            Test["one"] = 10;
+            Test[5] = "fifteen";
+            Assert.AreEqual("one", Test[10]);
+            Assert.AreEqual(5, Test["fifteen"]);
         }
 
         [TestMethod]
