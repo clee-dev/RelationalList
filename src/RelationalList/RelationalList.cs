@@ -168,8 +168,7 @@ namespace RelationalList
             {
                 if (X[i].Equals(x) && Y[i].Equals(y))
                 {
-                    X.RemoveAt(i);
-                    Y.RemoveAt(i);
+                    RemoveAt(i);
                     return;
                 }
             }
@@ -259,7 +258,7 @@ namespace RelationalList
         public void AddRange(IEnumerable<T1> x, IEnumerable<T2> y)
         {
             if (x.Count() != y.Count())
-                throw new Exception("Inputs are not equal in length");
+                throw new Exception("Enumerables are not equal in length");
 
             AddRange(x.ToRelationalList(y));
         }
@@ -277,7 +276,7 @@ namespace RelationalList
             if (DuplicatesFound())
             {
                 RemoveRange(items);
-                throw new Exception("Duplicate RelationalListPairs found after InsertRange()");
+                throw new Exception("Cannot insert duplicate elements");
             }
         }
 
@@ -289,7 +288,7 @@ namespace RelationalList
         public void InsertRange(int index, IEnumerable<T1> x, IEnumerable<T2> y)
         {
             if (x.Count() != y.Count())
-                throw new Exception("Inputs are not equal in length");
+                throw new Exception("Enumerables are not equal in length");
 
             InsertRange(index, x.ToRelationalList(y));
         }
